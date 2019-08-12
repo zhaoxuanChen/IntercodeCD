@@ -1,0 +1,12 @@
+digraph "CFG for 'goodG2B1' function" {
+	label="CFG for 'goodG2B1' function";
+
+	Node0x3805890 [shape=record,label="{%0:\l  %1 = alloca i32*, align 8\l  %2 = alloca i32*, align 8\l  %3 = alloca i32*, align 8\l  %4 = alloca [11 x i32], align 16\l  %5 = alloca i8, i64 40, align 16\l  %6 = bitcast i8* %5 to i32*\l  store i32* %6, i32** %2, align 8\l  %7 = alloca i8, i64 44, align 16\l  %8 = bitcast i8* %7 to i32*\l  store i32* %8, i32** %3, align 8\l  %9 = load i32, i32* @GLOBAL_CONST_FALSE, align 4\l  %10 = icmp ne i32 %9, 0\l  br i1 %10, label %11, label %12\l|{<s0>T|<s1>F}}"];
+	Node0x3805890:s0 -> Node0x38058e0;
+	Node0x3805890:s1 -> Node0x3805930;
+	Node0x38058e0 [shape=record,label="{%11:\l11:                                               \l  call void @printLine(i8* getelementptr inbounds ([21 x i8], [21 x i8]*\l... @.str, i64 0, i64 0))\l  br label %16\l}"];
+	Node0x38058e0 -> Node0x3805980;
+	Node0x3805930 [shape=record,label="{%12:\l12:                                               \l  %13 = load i32*, i32** %3, align 8\l  store i32* %13, i32** %1, align 8\l  %14 = load i32*, i32** %1, align 8\l  %15 = getelementptr inbounds i32, i32* %14, i64 0\l  store i32 0, i32* %15, align 4\l  br label %16\l}"];
+	Node0x3805930 -> Node0x3805980;
+	Node0x3805980 [shape=record,label="{%16:\l16:                                               \l  %17 = bitcast [11 x i32]* %4 to i8*\l  call void @llvm.memcpy.p0i8.p0i8.i64(i8* align 16 %17, i8* align 16 bitcast\l... ([11 x i32]* @__const.goodG2B1.source to i8*), i64 44, i1 false)\l  %18 = load i32*, i32** %1, align 8\l  %19 = getelementptr inbounds [11 x i32], [11 x i32]* %4, i64 0, i64 0\l  %20 = getelementptr inbounds [11 x i32], [11 x i32]* %4, i64 0, i64 0\l  %21 = call i64 @wcslen(i32* %20) #5\l  %22 = add i64 %21, 1\l  %23 = call i32* @wcsncpy(i32* %18, i32* %19, i64 %22) #6\l  %24 = load i32*, i32** %1, align 8\l  call void @printWLine(i32* %24)\l  ret void\l}"];
+}
